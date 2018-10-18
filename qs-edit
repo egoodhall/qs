@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+editor=$(which code || which subl || which atom || which vim)
+
+$editor ~/.qs/script

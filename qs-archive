@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+archive=$(date +%Y-%m-%d_%H:%M:%S)
+if [[ $1 ]]; then
+  archive=$1
+fi
+
+if [[ -d ~/.qs/archives/$1 ]]; then
+  echo "Archive '$archive' already exists"
+  exit
+fi
+
+echo Archiving to "~/.qs/archives/$archive"
+cp -R ~/.qs/script ~/.qs/archives/$archive
+
+exit 0

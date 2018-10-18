@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+if [[ ! $1 ]]; then
+  echo "No archive specified"
+  exit 1
+fi
+
+archive=~/.qs/archives/$1
+if [[ ! -d $archive ]]; then
+  echo "Archive '$1' doesn't exist"
+  exit
+fi
+
+echo Deleting '~/.qs/archives/'$1
+rm -rf $archive
+
+exit 0
