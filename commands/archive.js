@@ -30,23 +30,6 @@ const overwrite = (origin, destination) => {
   });
 };
 
-const ls = () => {
-  fs.readdirSync(dirs.archive).forEach(file => {
-    console.log(file);
-  });
-};
-
-const show = archive => {
-  const archiveDir = archive ? path.join(dirs.archive, archive) : dirs.script;
-  if (fs.existsSync(archiveDir)) {
-    fs.readdirSync(archiveDir).forEach(file => {
-      console.log(file);
-    });
-  } else {
-    console.log(`No archive named '${archive}' found`);
-  }
-};
-
 const archive = name => {
   const archiveName = name || getDateTime();
   const archiveDir = path.join(dirs.archive, archiveName);
@@ -83,8 +66,9 @@ const rm = archive => {
 
 module.exports = {
   restore,
-  ls,
-  show,
+  rs: restore,
+  remove: rm,
   rm,
+  save: archive,
   '--': archive,
 };

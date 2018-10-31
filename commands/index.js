@@ -10,6 +10,7 @@ module.exports = {
   init,
   archive,
   a: archive,
+  list: ls,
   ls,
   clean,
   clear: clean,
