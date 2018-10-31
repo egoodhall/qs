@@ -1,5 +1,0 @@
-#! /usr/bin/env bash
-
-mkdir -p ~/.qs
-mkdir -p ~/.qs/archives
-mkdir -p ~/.qs/script
